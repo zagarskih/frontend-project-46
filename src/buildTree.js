@@ -1,5 +1,4 @@
 const makeTree = (data1, data2) => {
-  const space = '  ';
   const keys2 = Object.keys(data2);
   const keys1 = Object.keys(data1);
   const diffs1 = keys2.reduce((acc, key) => {
@@ -22,23 +21,18 @@ const makeTree = (data1, data2) => {
   }, []);
 
   const diffs = [...diffs1, ...diffs2];
-
   const sortedDiffs = diffs.sort((arr1, arr2) => {
-    const elem1 = arr1[1];
-    const elem2 = arr2[1];
-    if (elem1 < elem2) {
+    if (arr1[1] < arr2[1]) {
       return -1;
     }
-    if (elem1 > elem2) {
+    if (arr1[1] > arr2[1]) {
       return 1;
     }
     return 0;
   });
 
-  const strOfDiffs = sortedDiffs.map((elem) => `${space}${elem[0]} ${elem[1]}: ${elem[2]}`)
-    .join('\n');
+  const strOfDiffs = sortedDiffs.map((elem) => `   ${elem[0]} ${elem[1]}: ${elem[2]}`).join('\n');
   const tree = `{\n${strOfDiffs}\n}`;
-
   return tree;
 };
 
