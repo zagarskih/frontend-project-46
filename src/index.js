@@ -8,7 +8,7 @@ const getPath = (fileName) => path.resolve(process.cwd(), fileName);
 const getFileType = (fileName) => path.extname(fileName).slice(1);
 
 const getParsedData = (filePath) => {
-  const fileData = readFileSync(filePath);
+  const fileData = readFileSync(filePath, 'utf-8');
   const fileType = getFileType(filePath);
   const parsedData = getFileParse(fileData, fileType);
   return parsedData;
