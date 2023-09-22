@@ -31,7 +31,7 @@ const makeTree = (data1, data2) => {
     return 0;
   });
 
-  const strOfDiffs = sortedDiffs.map((elem) => `   ${elem[0]} ${elem[1]}: ${elem[2]}`).join('\n');
+  const strOfDiffs = sortedDiffs.map((elem) => `  ${elem[0]} ${elem[1]}: ${elem[2]}`).join('\n');
   const tree = `{\n${strOfDiffs}\n}`;
   return tree;
 };
