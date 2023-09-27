@@ -1,6 +1,6 @@
 import path from 'path';
 import { readFileSync } from 'node:fs';
-import getFileParse from './parse.js';
+import getFileParse from './parsers.js';
 import makeTree from './buildTree.js';
 
 const getPath = (fileName) => path.resolve(process.cwd(), fileName);
