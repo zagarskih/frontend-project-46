@@ -36,7 +36,7 @@ const makeStylish = (tree, depth = 1) => {
     }
   });
 
-  return `{\n${result.join('\n')}\n${addReplacer(depth)}  }`;
+  return `{\n${result.join('\n')}\n${addReplacer(depth).slice(2)}}`;
 };
 
 export default makeStylish;
